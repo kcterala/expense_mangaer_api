@@ -16,7 +16,10 @@ import java.util.List;
 public class ExpenseController {
     @Autowired
     private ExpenseService expenseService;
-
+    @GetMapping("/")
+    private String test(){
+        return "testing versioning";
+    }
     @GetMapping("/expenses")
     public List<Expense> getAllExpenses(Pageable pageable)  {
         return expenseService.getAllExpenses(pageable).toList();
